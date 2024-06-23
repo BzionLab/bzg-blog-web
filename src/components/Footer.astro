@@ -5,10 +5,20 @@ const username = "bzionlab";
 
 <footer>
     <p>
-        Revisa más de nuestros proyectos en <a
+        Revisa más de nuestros proyectos en
+        <a
             href={`https://www.${platform}.com/${username}`}
             target="_blank"
-            rel="noopener noreferrer">{platform}</a
-        >!
+            rel="noopener noreferrer"
+            >{platform}
+        </a>!
     </p>
 </footer>
+
+<style>
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
