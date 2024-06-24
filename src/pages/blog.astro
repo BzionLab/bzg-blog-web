@@ -1,8 +1,9 @@
 ---
+import { getCollection } from "astro:content";
 import { slide } from "astro:transitions";
 import Layout from "../layouts/Layout.astro";
 
-const allPosts = await Astro.glob("./posts/*.md");
+const allPosts = await getCollection("posts");
 ---
 
 <Layout title="Blog page">
@@ -14,7 +15,7 @@ const allPosts = await Astro.glob("./posts/*.md");
         {
             allPosts.map((post) => (
                 <li>
-                    <a href={post.url}>{post.frontmatter.title}</a>
+                    <a href={`/posts/${post.slug}/`}>{post.data.title}</a>
                 </li>
             ))
         }
